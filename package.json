@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-webscraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^20.7.3"
+  },
+  "type": "module",
+  "description": "",
+  "types": "module"
+}
