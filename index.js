@@ -2,24 +2,14 @@ import puppeteer from "puppeteer";
 
 (async () => {
     const browser = await puppeteer.launch();
-    const page = await browser.newPage({ headless: true });
+    const page = await browser.newPage({ headless: false });
     await page.goto("https://quotes.toscrape.com/");
+    await page.click('a[href="/login"]')
 
-    const grabQuote = await page.evaluate(() => {
-        const quotes = document.querySelectorAll(".quote")
+    await page.type("#username", 'davidowho', {delay: 100})
+    await page.type("#password", 'davido25', {delay: 100})
 
-        let quoteArray = []
-        quotes.forEach((quoteTag) => {
-            const quoteInfo = quoteTag.querySelectorAll('span')
-            const actualQuote = quoteInfo[0]
-            const actualAuthor = quoteInfo[1]
-            const author = actualAuthor.querySelector('small')
+    await page.click('input[value="Logi"]');
 
-            quoteArray.push({quote: actualQuote.innerText, author: author.innerText})
-        })
-        return quoteArray;
-    })
-
-    console.log(grabQuote)
-    await browser.close();
+    // await browser.close();
 })();
