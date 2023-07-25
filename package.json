@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-parser": "^3.0.0",
+    "fs": "^0.0.1-security",
     "puppeteer": "^20.7.3"
   },
-  "type": "module",
   "description": "",
   "types": "module"
 }
